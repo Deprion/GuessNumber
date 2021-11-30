@@ -11,8 +11,6 @@ public class NumberManager : MonoBehaviour
     public int loss { private set; get; } = 0;
     private void Awake()
     {
-        if (s_inst == null) s_inst = this;
-        else if (s_inst != this) Destroy(gameObject);
         DontDestroyOnLoad(this);
     }
 

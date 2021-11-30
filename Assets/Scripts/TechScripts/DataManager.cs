@@ -10,21 +10,11 @@ public class DataManager : MonoBehaviour
 
     public Color32 BackGroundColor = new Color32(255, 250, 172, 255);
 
-    public delegate void FirstLaunchTimeDelegate();
-    public event FirstLaunchTimeDelegate FirstLaunchTimeEvent;
-
     private void Awake()
     {
-        if (s_inst == null) s_inst = this;
-        else if (s_inst != this) Destroy(gameObject);
-        if (firstLaunch)
-        {
-            DontDestroyOnLoad(this);
-            path = Application.persistentDataPath + "/save.save";
-            Load();
-            firstLaunch = false;
-            FirstLaunchTimeEvent?.Invoke();
-        }
+        DontDestroyOnLoad(this);
+        path = Application.persistentDataPath + "/save.save";
+        Load();
     }
     public class Data
     {
