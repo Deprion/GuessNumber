@@ -402,6 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundManager: {fileID: 5785467159166071262, guid: c7631ff9c93d2c1408eaef432e4eea32, type: 3}
+  dataManager: {fileID: 7205204532622019666, guid: 7f07fd81084fb5142ad8f6443962eaaa, type: 3}
+  gameManager: {fileID: 6839394829634521178, guid: 7b2639c03fa4be344afad1e4f63d9011, type: 3}
 --- !u!4 &1754862502
 Transform:
   m_ObjectHideFlags: 0

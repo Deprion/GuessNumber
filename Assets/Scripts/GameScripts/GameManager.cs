@@ -14,12 +14,10 @@ public class GameManager : MonoBehaviour
         NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
         NumberManager.s_inst.GenerateRandomNumber();
     }
-    public void GuessNumber()
+    public void GuessNumber(int PlayerNum)
     {
         try
         {
-            int PlayerNum = int.Parse(InputField.text);
-
             if (PlayerNum == NumberManager.s_inst.randomNumber)
             {
                 MainText.text = "Вы угадали!";

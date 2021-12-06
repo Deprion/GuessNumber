@@ -12,6 +12,7 @@ public class NumberManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
+        s_inst = this;
     }
 
     public void GenerateRandomNumber()

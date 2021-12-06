@@ -46,6 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicArray:
   - {fileID: 8300000, guid: 720a3c5a4cfd07d4eb7b81dc612c8eb8, type: 3}
+  - {fileID: 8300000, guid: c31092dd3a1436f4dbf9dede735976a6, type: 3}
+  - {fileID: 8300000, guid: 8577ab2a6fd9919478cf5e67f8a326bf, type: 3}
+  gameMusicArray:
   - {fileID: 8300000, guid: 9a5c3a0b2dd03f44ca56212fc2a23989, type: 3}
   audioSourceMusic: {fileID: 0}
 --- !u!82 &5785467159166071233

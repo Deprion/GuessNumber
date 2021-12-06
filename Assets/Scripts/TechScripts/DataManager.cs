@@ -13,6 +13,7 @@ public class DataManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this);
+        s_inst = this;
         path = Application.persistentDataPath + "/save.save";
         Load();
     }

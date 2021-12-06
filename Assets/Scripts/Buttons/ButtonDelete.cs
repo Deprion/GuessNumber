@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class ButtonsInput : MonoBehaviour
+public class ButtonDelete : MonoBehaviour
 {
     private InputManager inputManager;
-    [SerializeField]
-    private int num;
     private void Awake()
     {
         inputManager = FindObjectOfType<InputManager>();
     }
     private void OnMouseDown()
     {
-        inputManager.AddNumber(num);
+        inputManager.DeleteNumber();
     }
 }
