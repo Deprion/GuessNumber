@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
+        AttemptsText.text = $"попыток: {NumberManager.s_inst.numOfAttempts}";
         NumberManager.s_inst.GenerateRandomNumber();
     }
     public void GuessNumber(int PlayerNum)
