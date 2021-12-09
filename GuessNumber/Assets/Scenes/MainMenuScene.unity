@@ -2410,7 +2410,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1130, y: 2260}
+  m_SizeDelta: {x: 1230, y: 2460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346277258
 MonoBehaviour:
@@ -3853,7 +3853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: aec2063e46bf55342a54570fbf3f555c, type: 3}
+  m_Texture: {fileID: 2800000, guid: 7176e78831e8e384da35e7f43ad77073, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
