@@ -9,9 +9,11 @@ public class SoundManager : MonoBehaviour
     private AudioClip[] gameMusicArray;
     [SerializeField]
     private AudioSource audioSourceMusic;
+    public static SoundManager s_inst;
     void Awake()
     {
         DontDestroyOnLoad(this);
+        s_inst = this;
 
         audioSourceMusic = GetComponent<AudioSource>();
         audioSourceMusic.volume = 0.5f;
@@ -32,5 +34,9 @@ public class SoundManager : MonoBehaviour
             audioSourceMusic.clip = gameMusicArray[Random.Range(0, gameMusicArray.Length)];
             audioSourceMusic.Play();
         }
+    }
+    public void SwitchMusicVolume()
+    {
+        audioSourceMusic.mute = !audioSourceMusic.mute;
     }
 }
