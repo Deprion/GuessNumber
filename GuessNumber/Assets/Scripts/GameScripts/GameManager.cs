@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
     public TMP_Text AttemptsText;
     public TMP_Text NumText;
     public TMP_InputField InputField;
+    public LevelSO CurrentLevel;
     private int currentAttempt = 0;
     private void Awake()
     {
         NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
         AttemptsText.text = $"попыток: {NumberManager.s_inst.numOfAttempts}";
         NumberManager.s_inst.GenerateRandomNumber();
+        CurrentLevel = NumberManager.s_inst.Level;
     }
     public void GuessNumber(int PlayerNum)
     {
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
                 MainText.text = "Вы угадали!";
                 InputField.interactable = false;
                 DataManager.s_inst.Money += NumberManager.s_inst.reward;
+                CurrentLevel.Completed = true;
                 StartCoroutine(WaitFor(4));
             }
             else

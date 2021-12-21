@@ -7,12 +7,18 @@ public class NumberManager : MonoBehaviour
     public int numOfAttempts { private set; get; } = 1;
     public int minRandom { private set; get; } = 0;
     public int maxRandom { private set; get; } = 10;
+    public int totalRandom { private set; get; } = 10;
     public int reward { private set; get; } = 0;
     public int loss { private set; get; } = 0;
+    public LevelSO Level { private set; get; }
     private void Awake()
     {
         DontDestroyOnLoad(this);
         s_inst = this;
+    }
+    public void ChangeLevel(LevelSO level)
+    {
+        Level = level;
     }
 
     public void GenerateRandomNumber()
@@ -27,6 +33,10 @@ public class NumberManager : MonoBehaviour
     public void ChangeMaxRandom(int num)
     {
         maxRandom = num > minRandom ? num : minRandom + 10;
+    }
+    public void ChangeTotalRandom(int num)
+    {
+        totalRandom = num;
     }
     public void ChangeAttempts(int num)
     {

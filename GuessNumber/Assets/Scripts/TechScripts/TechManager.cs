@@ -2,28 +2,21 @@ using UnityEngine;
 
 public class TechManager : MonoBehaviour
 {
-    public void EasyMode()
+    public void RunLevel(LevelSO level)
     {
-        NumberManager.s_inst.ChangeMaxRandom(15);
-        NumberManager.s_inst.ChangeAttempts(6);
-        NumberManager.s_inst.ChangeReward(1);
-        NumberManager.s_inst.ChangeLoss(0);
-        SceneButtons.PlayBotBtn();
-    }
-    public void MediumMode()
-    {
-        NumberManager.s_inst.ChangeMaxRandom(100);
-        NumberManager.s_inst.ChangeAttempts(8);
-        NumberManager.s_inst.ChangeReward(4);
-        NumberManager.s_inst.ChangeLoss(2);
-        SceneButtons.PlayBotBtn();
-    }
-    public void HardMode()
-    {
-        NumberManager.s_inst.ChangeMaxRandom(500);
-        NumberManager.s_inst.ChangeAttempts(10);
-        NumberManager.s_inst.ChangeReward(9);
-        NumberManager.s_inst.ChangeLoss(6);
+        if (level.UseTotal)
+        {
+            NumberManager.s_inst.ChangeTotalRandom(level.TotalNum);
+        }
+        else
+        {
+            NumberManager.s_inst.ChangeMaxRandom(level.MinNum);
+            NumberManager.s_inst.ChangeMaxRandom(level.MaxNum);
+        }
+        NumberManager.s_inst.ChangeAttempts(level.Attempts);
+        NumberManager.s_inst.ChangeReward(level.Reward);
+        NumberManager.s_inst.ChangeLoss(level.Lose);
+        NumberManager.s_inst.ChangeLevel(level);
         SceneButtons.PlayBotBtn();
     }
 }
