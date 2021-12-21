@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Level_1
   m_EditorClassIdentifier: 
   LevelNum: 1
-  Reward: 0
-  Lose: 0
-  Attempts: 0
+  Reward: 4
+  Lose: 1
+  Attempts: 5
   MinNum: 0
-  MaxNum: 0
+  MaxNum: 10
+  TotalNum: 10
   Completed: 0
+  NonStory: 0
+  UseTotal: 0

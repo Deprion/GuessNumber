@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,9 +35,19 @@ public class SoundManager : MonoBehaviour
             audioSourceMusic.clip = gameMusicArray[Random.Range(0, gameMusicArray.Length)];
             audioSourceMusic.Play();
         }
+        StartCoroutine(raiseMusic(0));
     }
     public void SwitchMusicVolume()
     {
         audioSourceMusic.mute = !audioSourceMusic.mute;
+    }
+    private IEnumerator raiseMusic(float startVolume)
+    {
+        audioSourceMusic.volume = startVolume;
+        while (audioSourceMusic.volume < 0.5f)
+        {
+            audioSourceMusic.volume += 0.05f;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 }

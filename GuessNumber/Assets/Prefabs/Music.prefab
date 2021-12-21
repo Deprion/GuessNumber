@@ -50,6 +50,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8577ab2a6fd9919478cf5e67f8a326bf, type: 3}
   gameMusicArray:
   - {fileID: 8300000, guid: 9a5c3a0b2dd03f44ca56212fc2a23989, type: 3}
+  - {fileID: 8300000, guid: f25fc2895d34e85499b2f4296252b4a3, type: 3}
+  - {fileID: 8300000, guid: 64721d050cd482442984c04e1f8a0913, type: 3}
+  - {fileID: 8300000, guid: 642edd38c26b4df468e6666760f9b489, type: 3}
+  - {fileID: 8300000, guid: ed045658a9d73f74d989f8f8f73efce3, type: 3}
+  - {fileID: 8300000, guid: 4c5ebd428c804dc43bb1d91e307d5595, type: 3}
+  - {fileID: 8300000, guid: 011fb5e29fa9a4749b33ac320b05093f, type: 3}
   audioSourceMusic: {fileID: 0}
 --- !u!82 &5785467159166071233
 AudioSource:
