@@ -9,7 +9,8 @@ public class ChangeMusicButton : MonoBehaviour
     private void Start()
     {
         image = transform.GetChild(0).GetComponent<Image>();
-        
+        if (SoundManager.s_inst.MusicValueMute == 0)
+            image.sprite = muteMusic;
     }
     private void OnMouseDown()
     {

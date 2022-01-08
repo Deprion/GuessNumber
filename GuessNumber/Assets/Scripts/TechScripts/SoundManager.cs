@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private AudioSource audioSourceMusic;
     public static SoundManager s_inst;
+    public int MusicValueMute { private set; get; }
     void Awake()
     {
         DontDestroyOnLoad(this);
@@ -18,6 +19,8 @@ public class SoundManager : MonoBehaviour
 
         audioSourceMusic = GetComponent<AudioSource>();
         audioSourceMusic.volume = 0.5f;
+        MusicValueMute = PlayerPrefs.GetInt("Music", 1);
+        SwitchMusicVolume(MusicValueMute);
 
         SceneManager.activeSceneChanged += CheckMusic;
     }
@@ -40,6 +43,13 @@ public class SoundManager : MonoBehaviour
     public void SwitchMusicVolume()
     {
         audioSourceMusic.mute = !audioSourceMusic.mute;
+        int temp = audioSourceMusic.mute == true ? 0 : 1;
+        PlayerPrefs.SetInt("Music", temp);
+        MusicValueMute = temp;
+    }
+    public void SwitchMusicVolume(int value)
+    {
+        audioSourceMusic.mute = value == 0 ? true : false;
     }
     private IEnumerator raiseMusic(float startVolume)
     {

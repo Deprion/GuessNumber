@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class SetupManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject soundManager, dataManager, gameManager;
+    private GameObject soundManager, dataManager, gameManager, eventManager;
     private void Awake()
     {
         setupData();
@@ -21,6 +21,7 @@ public class SetupManager : MonoBehaviour
     {
         Instantiate(gameManager);
         Instantiate(soundManager);
+        Instantiate(eventManager);
     }
     private IEnumerator loadScene()
     {

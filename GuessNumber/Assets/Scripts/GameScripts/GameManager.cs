@@ -4,6 +4,8 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+    public delegate void ChangeEmotionDelegate(Static.CharacterEmotions index);
+    public event ChangeEmotionDelegate ChangeEmotionEvent;
     public TMP_Text MainText;
     public TMP_Text AttemptsText;
     public TMP_Text NumText;
@@ -12,10 +14,16 @@ public class GameManager : MonoBehaviour
     private int currentAttempt = 0;
     private void Awake()
     {
-        NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
-        AttemptsText.text = $"попыток: {NumberManager.s_inst.numOfAttempts}";
-        NumberManager.s_inst.GenerateRandomNumber();
         CurrentLevel = NumberManager.s_inst.Level;
+        currentAttempt = CurrentLevel.Attempts;
+        NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
+        AttemptsText.text = $"попыток: {currentAttempt}";
+        NumberManager.s_inst.GenerateRandomNumber();
+        MainText.text = "Кликни на меня, чтобы выйти";
+    }
+    private void Start()
+    {
+        ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.neutral);
     }
     public void GuessNumber(int PlayerNum)
     {
@@ -26,7 +34,8 @@ public class GameManager : MonoBehaviour
                 MainText.text = "Вы угадали!";
                 InputField.interactable = false;
                 DataManager.s_inst.Money += NumberManager.s_inst.reward;
-                CurrentLevel.Completed = true;
+                PlayerPrefs.SetInt($"level_{CurrentLevel.LevelNum}", 1);
+                ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.happy);
                 StartCoroutine(WaitFor(4));
             }
             else
@@ -34,18 +43,18 @@ public class GameManager : MonoBehaviour
                 if (PlayerNum < NumberManager.s_inst.randomNumber)
                     MainText.text = "Число больше";
                 else MainText.text = "Число меньше";
-                currentAttempt++;
-                AttemptsText.text = $"попыток: {NumberManager.s_inst.numOfAttempts - currentAttempt}";
+                AttemptsText.text = $"попыток: {--currentAttempt}";
             }
-            if (currentAttempt >= NumberManager.s_inst.numOfAttempts)
+            if (currentAttempt <= 0)
             {
                 MainText.text = "Вы проиграли!";
                 InputField.interactable = false;
                 DataManager.s_inst.Money -= NumberManager.s_inst.loss;
+                ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.angry);
                 StartCoroutine(WaitFor(4));
             }
         }
-        catch (System.FormatException)
+        catch (System.Exception)
         {
             MainText.text = "Не правильное число";
         }
@@ -54,5 +63,9 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         SceneButtons.MainMenuBtn();
+    }
+    public bool IsPlayerPlayed()
+    {
+        return currentAttempt < CurrentLevel.Attempts ? true : false;
     }
 }

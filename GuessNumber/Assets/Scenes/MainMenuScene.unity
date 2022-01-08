@@ -425,6 +425,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: dbe4e09952930ab43b4eae076c77f10b, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1135,6 +1139,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 9b677349c589603468cc8ca1e1bb4da4, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1269,7 +1277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 3.9999986, y: -263}
+  m_AnchoredPosition: {x: 0, y: -260}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &348984299
@@ -1292,7 +1300,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e37e078eb5190b14c960ee3a5d56271d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dfd95d1d52df3241a1bf6605141ff5c, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2381,6 +2389,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 0b54c6813c3ba4545868ac3366d8b156, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3082,6 +3094,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 7723997f96c269240ba9e01f9b1f3811, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3204,6 +3220,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 5cffdf8c92ae6834ba7cd120ce20c20d, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3535,6 +3555,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 700224af587464d4392ae3c301503913, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706628545268835768, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4516,7 +4544,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -49.999996}
-  m_SizeDelta: {x: 300, y: 100}
+  m_SizeDelta: {x: 260, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390109823
 MonoBehaviour:
@@ -4565,8 +4593,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4638,6 +4666,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: ecf0b5ae6bab4574e9b92a869c1b6aa0, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4760,6 +4792,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 8b83d69ddfbad094796ecf28173dfe2f, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5038,6 +5074,10 @@ PrefabInstance:
     - target: {fileID: 3988090266302160361, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: LevelSO, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706628545268835768, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_IsActive
@@ -5619,6 +5659,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: b3589b1a0deb3b84f87ab5a918768c70, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5846,6 +5890,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: c7efc3df5ede0774daf74b02c2c7ebc1, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6805,6 +6853,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: f55eb19c5fad92b47899826d0f226905, type: 2}
+    - target: {fileID: 4528348796234548307, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6286151037450935608, guid: a7ba67beb2180124482fa1d6a3b6bc04, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

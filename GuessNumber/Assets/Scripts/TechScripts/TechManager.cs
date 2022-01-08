@@ -13,7 +13,6 @@ public class TechManager : MonoBehaviour
             NumberManager.s_inst.ChangeMaxRandom(level.MinNum);
             NumberManager.s_inst.ChangeMaxRandom(level.MaxNum);
         }
-        NumberManager.s_inst.ChangeAttempts(level.Attempts);
         NumberManager.s_inst.ChangeReward(level.Reward);
         NumberManager.s_inst.ChangeLoss(level.Lose);
         NumberManager.s_inst.ChangeLevel(level);
