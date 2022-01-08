@@ -33,8 +33,16 @@ public class GameManager : MonoBehaviour
             {
                 MainText.text = "Вы угадали!";
                 InputField.interactable = false;
-                DataManager.s_inst.Money += NumberManager.s_inst.reward;
-                PlayerPrefs.SetInt($"level_{CurrentLevel.LevelNum}", 1);
+                if (PlayerPrefs.GetInt($"level_{CurrentLevel.LevelNum}", 0) == 0 &&
+                    !CurrentLevel.NonStory)
+                {
+                    DataManager.s_inst.Money += NumberManager.s_inst.reward;
+                    PlayerPrefs.SetInt($"level_{CurrentLevel.LevelNum}", 1);
+                }
+                if (CurrentLevel.NonStory)
+                {
+                    DataManager.s_inst.Money += NumberManager.s_inst.reward;
+                }
                 ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.happy);
                 StartCoroutine(WaitFor(4));
             }

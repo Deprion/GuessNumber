@@ -481,6 +481,7 @@ MonoBehaviour:
   dataManager: {fileID: 7205204532622019666, guid: 7f07fd81084fb5142ad8f6443962eaaa, type: 3}
   gameManager: {fileID: 6839394829634521178, guid: 7b2639c03fa4be344afad1e4f63d9011, type: 3}
   eventManager: {fileID: 4398218528918070405, guid: 061ff9fe67dae9243aca5a51d306383e, type: 3}
+  interfaceManager: {fileID: 125620431122274273, guid: 04486c815ef54f24796d617e38f0557c, type: 3}
 --- !u!4 &1754862502
 Transform:
   m_ObjectHideFlags: 0
