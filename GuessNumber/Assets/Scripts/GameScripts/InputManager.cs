@@ -26,12 +26,18 @@ public class InputManager : MonoBehaviour
     public void DeleteNumber()
     {
         if (currentNum.text.Length > 0)
+        {
+            selected = false;
             currentNum.text = currentNum.text.Remove(currentNum.text.Length - 1);
+        }
     }
     public void DeleteNumberWhole()
     {
         if (currentNum.text.Length > 0)
+        {
+            selected = false;
             currentNum.text = currentNum.text.Remove(0);
+        }
     }
     public void AcceptNumber()
     {

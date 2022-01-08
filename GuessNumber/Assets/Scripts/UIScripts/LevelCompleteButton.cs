@@ -5,12 +5,10 @@ public class LevelCompleteButton : MonoBehaviour
 {
     [SerializeField]
     private GameObject complete;
-    [SerializeField]
-    private LevelSO level;
     private void Start()
     {
         string num = GetComponentInChildren<TMP_Text>().text;
-        if (level.Completed)
+        if (PlayerPrefs.GetInt($"level_{num}", 0) == 1)
         {
             complete.SetActive(true);
         }
