@@ -68,7 +68,7 @@ public class DataManager : MonoBehaviour
         if (ButtonImage == null)
             ButtonImage = arrayOfSprite[0];
 
-        if (ButtonColor == Color.black)
+        if (ButtonColor == Color.clear)
             ButtonColor = arrayOfColor[0];
 
         path = Application.persistentDataPath + "/save.save";

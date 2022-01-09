@@ -37,6 +37,7 @@ public class ButtonBuyColor : MonoBehaviour
             buyButton.onClick.RemoveAllListeners();
             Interface.s_inst.UpdateMoney();
             infoPanel.SetActive(false);
+            container.SetActive(true);
             CheckAvailable();
         }
     }
