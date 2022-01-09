@@ -49,6 +49,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0d3a7c9085c59e74da281078d965c187, type: 3}
   - {fileID: 21300000, guid: 32b4b137517426d42b3ff8ed22c7d39a, type: 3}
   - {fileID: 21300000, guid: 632eba51bb3ee2045876f1865eb8dc16, type: 3}
-  ButtonColor:
-    serializedVersion: 2
+  arrayOfColor:
+  - serializedVersion: 2
     rgba: 4294967295
+  - serializedVersion: 2
+    rgba: 4283256319
+  - serializedVersion: 2
+    rgba: 4283294207
+  - serializedVersion: 2
+    rgba: 4283301768
+  - serializedVersion: 2
+    rgba: 4289134413
+  - serializedVersion: 2
+    rgba: 4294952013
+  - serializedVersion: 2
+    rgba: 4294921579
+  - serializedVersion: 2
+    rgba: 4294921727
+  - serializedVersion: 2
+    rgba: 4294921638

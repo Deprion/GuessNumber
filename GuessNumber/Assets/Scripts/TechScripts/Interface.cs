@@ -25,6 +25,6 @@ public class Interface : MonoBehaviour
         {
             Balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<TMP_Text>();
         }
-        Balance.text = $"Монет: {DataManager.s_inst.Money}";
+        Balance.text = $"{DataManager.s_inst.Money}";
     }
 }

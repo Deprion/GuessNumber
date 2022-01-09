@@ -7,8 +7,33 @@ public class DataManager : MonoBehaviour
     public int Money { set; get; } = 0;
     private string path;
     [SerializeField] private Sprite[] arrayOfSprite;
+    [SerializeField] private Color32[] arrayOfColor;
 
-    public Color32 ButtonColor = new Color32(255, 255, 255, 255);
+    private Color32 buttonColor;
+    public Color32 ButtonColor
+    { 
+        get
+        {
+            if (buttonColor == Color.clear)
+            {
+                foreach (Color clr in arrayOfColor)
+                {
+                    if (PlayerPrefs.GetInt(clr.ToString()) == 2)
+                        buttonColor = clr;
+                }
+            }
+            return buttonColor;
+        }
+        set
+        {
+            if (buttonColor != Color.clear)
+            {
+                PlayerPrefs.SetInt(buttonColor.ToString(), 1);
+            }
+            buttonColor = value;
+            PlayerPrefs.SetInt(buttonColor.ToString(), 2);
+        }
+    }
     private Sprite buttonImage;
     public Sprite ButtonImage
     { 
@@ -39,13 +64,12 @@ public class DataManager : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         s_inst = this;
-        foreach (Sprite spr in arrayOfSprite)
-        {
-            if (PlayerPrefs.GetInt(spr.name) == 2)
-                ButtonImage = spr;
-        }
+
         if (ButtonImage == null)
             ButtonImage = arrayOfSprite[0];
+
+        if (ButtonColor == Color.black)
+            ButtonColor = arrayOfColor[0];
 
         path = Application.persistentDataPath + "/save.save";
         Load();

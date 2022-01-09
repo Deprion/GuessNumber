@@ -2,9 +2,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class ButtonBuy : MonoBehaviour
+public class ButtonBuyColor : MonoBehaviour
 {
-    [SerializeField] private Sprite sprite;
+    [SerializeField] private Color32 color;
     [SerializeField] private int price;
     [SerializeField] private GameObject infoPanel, container, closeButton, bought, toBuy;
     [SerializeField] private TMP_Text text;
@@ -12,11 +12,12 @@ public class ButtonBuy : MonoBehaviour
     private void Start()
     {
         text.text = $"Купить за {price}?";
+        GetComponent<Image>().color = color;
         CheckAvailable();
     }
     private void CheckAvailable()
     {
-        if (PlayerPrefs.GetInt(ObjOfSprite().name, 0) != 0)
+        if (PlayerPrefs.GetInt(ObjOfColor().ToString(), 0) != 0)
         {
             bought.SetActive(true);
             toBuy.SetActive(false);
@@ -32,7 +33,7 @@ public class ButtonBuy : MonoBehaviour
         if (DataManager.s_inst.Money >= price)
         {
             DataManager.s_inst.Money -= price;
-            PlayerPrefs.SetInt($"{sprite.name}", 1);
+            PlayerPrefs.SetInt($"{color}", 1);
             buyButton.onClick.RemoveAllListeners();
             Interface.s_inst.UpdateMoney();
             infoPanel.SetActive(false);
@@ -41,7 +42,7 @@ public class ButtonBuy : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (PlayerPrefs.GetInt(ObjOfSprite().name, 0) == 0)
+        if (PlayerPrefs.GetInt(ObjOfColor().ToString(), 0) == 0)
         {
             infoPanel.SetActive(!infoPanel.activeSelf);
             container.SetActive(!container.activeSelf);
@@ -49,13 +50,13 @@ public class ButtonBuy : MonoBehaviour
         }
         else
         {
-            DataManager.s_inst.ButtonImage = ObjOfSprite();
+            DataManager.s_inst.ButtonColor = ObjOfColor();
             closeButton.GetComponent<Image>().sprite = DataManager.s_inst.ButtonImage;
             closeButton.GetComponent<Image>().color = DataManager.s_inst.ButtonColor;
         }
     }
-    public Sprite ObjOfSprite()
+    public Color32 ObjOfColor()
     {
-        return sprite;
+        return color;
     }
 }

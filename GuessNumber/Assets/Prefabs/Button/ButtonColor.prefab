@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1376252848817713930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -88,9 +88,9 @@ GameObject:
   - component: {fileID: 2507965025183729708}
   - component: {fileID: 2507965025183729747}
   - component: {fileID: 2507965025183729710}
-  - component: {fileID: 2507965025183729746}
+  - component: {fileID: 4979798395994080491}
   m_Layer: 5
-  m_Name: ButtonFrame
+  m_Name: ButtonColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fbcd60673a2f5fc4288b2eeebea150e1, type: 3}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -225,7 +225,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 128, y: 128}
   m_EdgeRadius: 0
---- !u!114 &2507965025183729746
+--- !u!114 &4979798395994080491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,11 +234,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2507965025183729744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dde041d583c623c48b56c1451da023a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 42058e1ed223fcd43aec3e7589ef93f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: fbcd60673a2f5fc4288b2eeebea150e1, type: 3}
-  price: 100
+  color:
+    serializedVersion: 2
+    rgba: 0
+  price: 0
   infoPanel: {fileID: 0}
   closeButton: {fileID: 0}
   bought: {fileID: 0}
