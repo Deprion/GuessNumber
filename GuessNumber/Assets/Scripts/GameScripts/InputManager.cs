@@ -43,8 +43,16 @@ public class InputManager : MonoBehaviour
     {
         if (currentNum.text.Length > 0)
         {
-            gameManager.GuessNumber(int.Parse(currentNum.text));
-            selected = true;
+            if (!gameManager.CurrentLevel.Endless)
+            {
+                gameManager.GuessNumber(int.Parse(currentNum.text));
+                selected = true;
+            }
+            else
+            {
+                gameManager.EndlessMode(int.Parse(currentNum.text));
+                selected = true;
+            }
         }
     }
 }

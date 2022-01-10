@@ -1621,6 +1621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d0fbcd9d52d0f45b64072553496dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  input: {fileID: 54926239}
   MainText: {fileID: 892648656}
   AttemptsText: {fileID: 1647266472}
   NumText: {fileID: 758915112}
@@ -4187,6 +4188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8300a2ba9e08be640a2ac8c391c39af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 61375246}
 --- !u!61 &1429406715
 BoxCollider2D:
   m_ObjectHideFlags: 0

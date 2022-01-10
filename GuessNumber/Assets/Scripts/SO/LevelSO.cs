@@ -10,7 +10,6 @@ public class LevelSO : ScriptableObject
     public int MinNum;
     public int MaxNum;
     public int TotalNum;
-    public bool Completed;
     public bool NonStory;
-    public bool UseTotal;
+    public bool Endless;
 }

@@ -4,7 +4,7 @@ public class TechManager : MonoBehaviour
 {
     public void RunLevel(LevelSO level)
     {
-        if (level.UseTotal)
+        if (level.Endless)
         {
             NumberManager.s_inst.ChangeTotalRandom(level.TotalNum);
         }
