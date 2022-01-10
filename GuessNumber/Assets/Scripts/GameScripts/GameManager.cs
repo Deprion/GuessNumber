@@ -19,15 +19,16 @@ public class GameManager : MonoBehaviour
         currentAttempt = CurrentLevel.Attempts;
         if (CurrentLevel.Endless)
         {
+            MainText.text = "Кликни на меня, чтобы забрать награду";
             RandomLimit();
         }
         else
-        { 
+        {
+            MainText.text = "Кликни на меня, чтобы выйти";
             NumberManager.s_inst.GenerateRandomNumber();
         }
         NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
         AttemptsText.text = $"попыток: {currentAttempt}";
-        MainText.text = "Кликни на меня, чтобы выйти";
     }
     private void Start()
     {
