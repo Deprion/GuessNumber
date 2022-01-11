@@ -133,7 +133,8 @@ public class GameManager : MonoBehaviour
     }
     private void RandomLimit()
     {
-        NumberManager.s_inst.ChangeTotalRandom(NumberManager.s_inst.maxRandom + 100 +
+        NumberManager.s_inst.ChangeTotalRandom(NumberManager.s_inst.maxRandom + 50 +
+            NumberManager.s_inst.minRandom +
             (int)(NumberManager.s_inst.totalRandom * 0.1));
         NumberManager.s_inst.ChangeMinRandom(Random.Range(0, 
             (int)(NumberManager.s_inst.totalRandom * 0.2)));
