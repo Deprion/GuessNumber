@@ -1,19 +1,30 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interface : MonoBehaviour
 {
-    public TMP_Text Balance;
     public static Interface s_inst;
-    public Color32 BackGroundColor;
+    private TMP_Text Balance;
     private void Start()
     {
+        DontDestroyOnLoad(this);
         s_inst = this;
-        Balance.text = $"Монет: {DataManager.s_inst.Money}";
-        BackGroundColor = DataManager.s_inst.BackGroundColor;
+        SceneManager.activeSceneChanged += UpdateUI;
+    }
+    private void UpdateUI(Scene scenePrv, Scene SceneCur)
+    {
+        if (SceneCur.name == "MainMenuScene")
+        {
+            UpdateMoney();
+        }
     }
     public void UpdateMoney()
     {
-        Balance.text = $"Монет: {DataManager.s_inst.Money}";
+        if (Balance == null)
+        {
+            Balance = GameObject.FindGameObjectWithTag("Balance").GetComponent<TMP_Text>();
+        }
+        Balance.text = $"{DataManager.s_inst.Money}";
     }
 }

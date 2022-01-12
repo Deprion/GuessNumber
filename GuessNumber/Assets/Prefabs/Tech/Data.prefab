@@ -43,6 +43,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 545e40db1b33e444b8965771378ae256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BackGroundColor:
-    serializedVersion: 2
-    rgba: 4289526527
+  arrayOfSprite:
+  - {fileID: 21300000, guid: e37e078eb5190b14c960ee3a5d56271d, type: 3}
+  - {fileID: 21300000, guid: fbcd60673a2f5fc4288b2eeebea150e1, type: 3}
+  - {fileID: 21300000, guid: 0d3a7c9085c59e74da281078d965c187, type: 3}
+  - {fileID: 21300000, guid: 32b4b137517426d42b3ff8ed22c7d39a, type: 3}
+  - {fileID: 21300000, guid: 632eba51bb3ee2045876f1865eb8dc16, type: 3}
+  arrayOfColor:
+  - serializedVersion: 2
+    rgba: 4294967295
+  - serializedVersion: 2
+    rgba: 4283256319
+  - serializedVersion: 2
+    rgba: 4283294207
+  - serializedVersion: 2
+    rgba: 4283301768
+  - serializedVersion: 2
+    rgba: 4289134413
+  - serializedVersion: 2
+    rgba: 4294952013
+  - serializedVersion: 2
+    rgba: 4294921579
+  - serializedVersion: 2
+    rgba: 4294921727
+  - serializedVersion: 2
+    rgba: 4294921638

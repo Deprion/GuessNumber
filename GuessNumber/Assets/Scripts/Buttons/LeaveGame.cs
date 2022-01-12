@@ -1,13 +1,28 @@
 using UnityEngine;
+using TMPro;
 
 public class LeaveGame : MonoBehaviour
 {
+    [SerializeField] private TMP_Text text;
+    private GameManager gm;
+    private void OnEnable()
+    {
+        if (gm == null)
+            gm = GameObject.FindGameObjectWithTag("GameManager").
+            GetComponent<GameManager>();
+
+        if (gm.CurrentLevel.Endless)
+            text.text = $"Выйти?\nВы заберете монеты: {NumberManager.s_inst.reward}";
+        else
+            text.text = "Выйти?\nВы потеряете монеты, если угадывали.";
+    }
     private void OnMouseDown()
     {
-        if (GameObject.FindGameObjectWithTag("GameManager").
-            GetComponent<GameManager>().IsPlayerPlayed())
+        if (gm.CurrentLevel.Endless)
+            DataManager.s_inst.Money += NumberManager.s_inst.reward;
+        if (gm.IsPlayerPlayed())
         {
-            DataManager.s_inst.Money -= NumberManager.s_inst.loss;
+             DataManager.s_inst.Money -= NumberManager.s_inst.loss;
         }
         SceneButtons.MainMenuBtn();
     }

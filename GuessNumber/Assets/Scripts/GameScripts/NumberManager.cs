@@ -23,7 +23,7 @@ public class NumberManager : MonoBehaviour
 
     public void GenerateRandomNumber()
     {
-        randomNumber = Random.Range(minRandom, maxRandom);
+        randomNumber = Random.Range(minRandom, maxRandom + 1);
     }
 
     public void ChangeMinRandom(int num)

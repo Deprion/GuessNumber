@@ -8,8 +8,8 @@ public class BackgroundChanger : MonoBehaviour
     {
         image = GetComponent<Image>();
     }
-    private void Start()
+    private void ChangeColor(Color32 color)
     {
-        //image.color = Interface.s_inst.BackGroundColor;
+        image.color = color;
     }
 }

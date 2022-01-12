@@ -16,9 +16,8 @@ MonoBehaviour:
   Reward: 32
   Lose: 8
   Attempts: 16
-  MinNum: -220
-  MaxNum: 292
+  MinNum: 12
+  MaxNum: 500
   TotalNum: 512
-  Completed: 0
   NonStory: 0
-  UseTotal: 0
+  Endless: 0
