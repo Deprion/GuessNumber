@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private int currentAttempt = 0;
     private void Awake()
     {
+        AdsManager.s_inst.LoadBannerAd();
         CurrentLevel = NumberManager.s_inst.Level;
         currentAttempt = CurrentLevel.Attempts;
         if (CurrentLevel.Endless)
@@ -109,6 +110,13 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator WaitForScene(int time)
     {
+        if (Static.s_WithoutAd >= 2)
+        {
+            AdsManager.s_inst.LoadVideoAd();
+            Static.s_WithoutAd = 0;
+        }
+        else
+            Static.s_WithoutAd++;
         yield return new WaitForSeconds(time);
         SceneButtons.MainMenuBtn();
     }

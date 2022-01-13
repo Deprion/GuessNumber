@@ -7,4 +7,5 @@ public static class Static
         neutral = 1,
         angry = 2
     }
+    public static int s_WithoutAd = 0;
 }
