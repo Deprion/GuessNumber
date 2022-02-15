@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - Balance
+  - Language
   layers:
   - Default
   - TransparentFX

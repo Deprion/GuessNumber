@@ -14,14 +14,7 @@ public class ChangeMusicButton : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (image.sprite.name == music.name)
-        {
-            image.sprite = muteMusic;
-        }
-        else 
-        {
-            image.sprite = music;
-        }
+        image.sprite = image.sprite.name == music.name ? muteMusic : music;
         SoundManager.s_inst.SwitchMusicVolume();
     }
 }

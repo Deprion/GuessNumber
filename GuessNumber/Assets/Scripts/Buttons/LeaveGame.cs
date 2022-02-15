@@ -10,11 +10,12 @@ public class LeaveGame : MonoBehaviour
         if (gm == null)
             gm = GameObject.FindGameObjectWithTag("GameManager").
             GetComponent<GameManager>();
-
         if (gm.CurrentLevel.Endless)
-            text.text = $"Выйти?\nВы заберете монеты: {NumberManager.s_inst.reward}";
-        else
-            text.text = "Выйти?\nВы потеряете монеты, если угадывали.";
+        {
+            text.text = $"{LanguageManager.inst.GetString("text_leave_reward")}" +
+                $": {NumberManager.s_inst.reward}";
+        }
+        else text.text = LanguageManager.inst.GetString("text_leave");
     }
     private void OnMouseDown()
     {

@@ -15,21 +15,20 @@ public class GameManager : MonoBehaviour
     private int currentAttempt = 0;
     private void Awake()
     {
-        AdsManager.s_inst.LoadBannerAd();
         CurrentLevel = NumberManager.s_inst.Level;
         currentAttempt = CurrentLevel.Attempts;
         if (CurrentLevel.Endless)
         {
-            MainText.text = "Кликни на меня, чтобы забрать награду";
+            MainText.text = LanguageManager.inst.GetString("click_on_end");
             RandomLimit();
         }
         else
         {
-            MainText.text = "Кликни на меня, чтобы выйти";
+            MainText.text = LanguageManager.inst.GetString("click_on");
             NumberManager.s_inst.GenerateRandomNumber();
         }
-        NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
-        AttemptsText.text = $"попыток: {currentAttempt}";
+        FromToText();
+        AttemptText();
     }
     private void Start()
     {
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
         {
             if (PlayerNum == NumberManager.s_inst.randomNumber)
             {
-                MainText.text = "Вы угадали!";
+                MainText.text = LanguageManager.inst.GetString("guessed");
                 InputField.interactable = false;
                 if (PlayerPrefs.GetInt($"level_{CurrentLevel.LevelNum}", 0) == 0 &&
                     !CurrentLevel.NonStory)
@@ -59,13 +58,14 @@ public class GameManager : MonoBehaviour
             else
             {
                 if (PlayerNum < NumberManager.s_inst.randomNumber)
-                    MainText.text = "Число больше";
-                else MainText.text = "Число меньше";
-                AttemptsText.text = $"попыток: {--currentAttempt}";
+                    MainText.text = LanguageManager.inst.GetString("higher");
+                else MainText.text = LanguageManager.inst.GetString("lower");
+                --currentAttempt;
+                AttemptText();
             }
             if (currentAttempt <= 0)
             {
-                MainText.text = "Вы проиграли!";
+                MainText.text = LanguageManager.inst.GetString("lose");
                 InputField.interactable = false;
                 DataManager.s_inst.Money -= NumberManager.s_inst.loss;
                 ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.angry);
@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
         catch (System.Exception)
         {
-            MainText.text = "Не правильное число";
+            MainText.text = LanguageManager.inst.GetString("wrong");
         }
     }
     public void EndlessMode(int PlayerNum)
@@ -83,20 +83,21 @@ public class GameManager : MonoBehaviour
         {
             if (PlayerNum == NumberManager.s_inst.randomNumber)
             {
-                MainText.text = "Вы угадали!";
+                MainText.text = LanguageManager.inst.GetString("guessed");
                 ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.happy);
                 StartCoroutine(WaitForNextNumber(1));
             }
             else
             {
                 if (PlayerNum < NumberManager.s_inst.randomNumber)
-                    MainText.text = "Число больше";
-                else MainText.text = "Число меньше";
-                AttemptsText.text = $"попыток: {--currentAttempt}";
+                    MainText.text = LanguageManager.inst.GetString("higher");
+                else MainText.text = LanguageManager.inst.GetString("lower");
+                --currentAttempt;
+                AttemptText();
             }
             if (currentAttempt <= 0)
             {
-                MainText.text = "Вы проиграли!";
+                MainText.text = LanguageManager.inst.GetString("lose");
                 InputField.interactable = false;
                 DataManager.s_inst.Money -= NumberManager.s_inst.reward;
                 ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.angry);
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
         }
         catch (System.Exception)
         {
-            MainText.text = "Не правильное число";
+            MainText.text = LanguageManager.inst.GetString("wrong");
         }
     }
     private IEnumerator WaitForScene(int time)
@@ -134,9 +135,9 @@ public class GameManager : MonoBehaviour
         {
             currentAttempt += (int)(NumberManager.s_inst.totalRandom * 0.0125);
         }
-        NumText.text = $"от {NumberManager.s_inst.minRandom} до {NumberManager.s_inst.maxRandom}";
-        AttemptsText.text = $"попыток: {currentAttempt}";
-        MainText.text = "Угадай число";
+        FromToText();
+        AttemptText();
+        MainText.text = LanguageManager.inst.GetString("guess");
         ChangeEmotionEvent?.Invoke(Static.CharacterEmotions.neutral);
     }
     private void RandomLimit()
@@ -149,6 +150,17 @@ public class GameManager : MonoBehaviour
         NumberManager.s_inst.ChangeMaxRandom(NumberManager.s_inst.totalRandom -
             NumberManager.s_inst.minRandom);
         NumberManager.s_inst.GenerateRandomNumber();
+    }
+    private void AttemptText()
+    {
+        AttemptsText.text = $"{LanguageManager.inst.GetString("attempt")}: {currentAttempt}";
+    }
+    private void FromToText()
+    {
+        NumText.text = $"{LanguageManager.inst.GetString("from")}" +
+            $" {NumberManager.s_inst.minRandom}" +
+            $" {LanguageManager.inst.GetString("to")}" +
+            $" {NumberManager.s_inst.maxRandom}";
     }
     public bool IsPlayerPlayed()
     {

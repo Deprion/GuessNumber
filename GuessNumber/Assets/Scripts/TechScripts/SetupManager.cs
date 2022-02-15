@@ -6,7 +6,7 @@ public class SetupManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject soundManager, dataManager, gameManager, interfaceManager,
-        adsManager;
+        adsManager, langManager;
     private void Awake()
     {
         setupData();
@@ -24,6 +24,7 @@ public class SetupManager : MonoBehaviour
         Instantiate(soundManager);
         Instantiate(interfaceManager);
         Instantiate(adsManager);
+        Instantiate(langManager);
     }
     private IEnumerator loadScene()
     {

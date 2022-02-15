@@ -5,7 +5,8 @@ using TMPro;
 public class ButtonRewardAd : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
-    [SerializeField] private Button close, ad;
+    [SerializeField] private Button close;
+    [SerializeField] private BoxCollider2D ad;
     [SerializeField] private TMP_Text text;
     public static ButtonRewardAd s_inst;
     private void Start()
@@ -13,26 +14,28 @@ public class ButtonRewardAd : MonoBehaviour
         s_inst = this;
         if (!AdsManager.s_inst.CheckForInit())
         {
-            ad.interactable = false;
-            text.text = "Реклама недоступна";
+            ad.enabled = false;
+            text.text = LanguageManager.inst.GetString("no_ad");
         }
         else
         {
-            text.text = "Посмотреть рекламу и получить 10 монет?";
+            text.text = LanguageManager.inst.GetString("ad");
         }
     }
     private void OnMouseDown()
     {
-        AdsManager.s_inst.LoadRewardAd();
-        text.text = "Реклама загружается";
+        AdsManager.s_inst.ShowAd("Rewarded_Android");
+        text.text = LanguageManager.inst.GetString("ad_load");
         close.interactable = false;
-        ad.interactable = false;
+        ad.enabled = false;
+        DataManager.s_inst.Money += 10;
+        Interface.s_inst.UpdateMoney();
     }
     public void UnlockMenu()
     {
         close.interactable = true;
-        ad.interactable = true;
+        ad.enabled = true;
         panel.SetActive(false);
-        text.text = "Посмотреть рекламу и получить 10 монет?";
+        text.text = LanguageManager.inst.GetString("ad");
     }
 }

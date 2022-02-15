@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MainAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 2247400bbc44c4544a1ee419f885f26a, type: 3}
+    - {fileID: 2800000, guid: 632eba51bb3ee2045876f1865eb8dc16, type: 3}
+    - {fileID: 2800000, guid: e37e078eb5190b14c960ee3a5d56271d, type: 3}
+    - {fileID: 2800000, guid: fbcd60673a2f5fc4288b2eeebea150e1, type: 3}
+    - {fileID: 2800000, guid: 0d3a7c9085c59e74da281078d965c187, type: 3}
+    - {fileID: 2800000, guid: 0dfd95d1d52df3241a1bf6605141ff5c, type: 3}
+    - {fileID: 2800000, guid: 32b4b137517426d42b3ff8ed22c7d39a, type: 3}
+    - {fileID: 2800000, guid: aa4cfc4154d58f24ea302cddea13ebb2, type: 3}
+    - {fileID: 2800000, guid: 62f96075a96e7cc49889b9d00deff9ce, type: 3}
+    - {fileID: 2800000, guid: eadcedf1c6d171544bd69dd05e60b00e, type: 3}
+    - {fileID: 2800000, guid: 5b77cfd0ccc3be34f868a0e416f4ce9f, type: 3}
+    - {fileID: 2800000, guid: 89c4a4423e57d5f4d8353ddd1637f4e7, type: 3}
+    - {fileID: 2800000, guid: eaec41133500fc74d92f6fbd6dbbe5c2, type: 3}
+    - {fileID: 2800000, guid: 95e56860f68bbfb48830523f10e6f39d, type: 3}
+    - {fileID: 2800000, guid: 3a20e641568b7d148897d4fb20f71257, type: 3}
+    - {fileID: 2800000, guid: 1ef17d6cb8c5ac346b59e5bcd0b52c55, type: 3}
+    - {fileID: 2800000, guid: 13057e7f745fefe4487992a540a04e03, type: 3}
+    totalSpriteSurfaceArea: 884016
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 95e56860f68bbfb48830523f10e6f39d, type: 3}
+  - {fileID: 21300000, guid: 0d3a7c9085c59e74da281078d965c187, type: 3}
+  - {fileID: 21300000, guid: 5b77cfd0ccc3be34f868a0e416f4ce9f, type: 3}
+  - {fileID: 21300000, guid: 3a20e641568b7d148897d4fb20f71257, type: 3}
+  - {fileID: 21300000, guid: aa4cfc4154d58f24ea302cddea13ebb2, type: 3}
+  - {fileID: 21300000, guid: 632eba51bb3ee2045876f1865eb8dc16, type: 3}
+  - {fileID: 21300000, guid: 0dfd95d1d52df3241a1bf6605141ff5c, type: 3}
+  - {fileID: 21300000, guid: eadcedf1c6d171544bd69dd05e60b00e, type: 3}
+  - {fileID: 21300000, guid: 89c4a4423e57d5f4d8353ddd1637f4e7, type: 3}
+  - {fileID: 21300000, guid: eaec41133500fc74d92f6fbd6dbbe5c2, type: 3}
+  - {fileID: 21300000, guid: 62f96075a96e7cc49889b9d00deff9ce, type: 3}
+  - {fileID: 21300000, guid: 32b4b137517426d42b3ff8ed22c7d39a, type: 3}
+  - {fileID: 21300000, guid: fbcd60673a2f5fc4288b2eeebea150e1, type: 3}
+  - {fileID: 21300000, guid: 2247400bbc44c4544a1ee419f885f26a, type: 3}
+  - {fileID: 21300000, guid: 1ef17d6cb8c5ac346b59e5bcd0b52c55, type: 3}
+  - {fileID: 21300000, guid: e37e078eb5190b14c960ee3a5d56271d, type: 3}
+  - {fileID: 21300000, guid: 13057e7f745fefe4487992a540a04e03, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Accept
+  - Button_3
+  - Russia_Round
+  - Accept_2
+  - Music
+  - Button_6
+  - Button_4
+  - Phrase
+  - SettingsButton
+  - USA_Round
+  - Mute_Music
+  - Button_5
+  - Button_2
+  - Coin
+  - Cancel
+  - Button_1
+  - BackGround_fon
+  m_RenderDataMap: {}
+  m_Tag: MainAtlas
+  m_IsVariant: 0

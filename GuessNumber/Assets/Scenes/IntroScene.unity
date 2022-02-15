@@ -482,6 +482,7 @@ MonoBehaviour:
   gameManager: {fileID: 6839394829634521178, guid: 7b2639c03fa4be344afad1e4f63d9011, type: 3}
   interfaceManager: {fileID: 125620431122274273, guid: 04486c815ef54f24796d617e38f0557c, type: 3}
   adsManager: {fileID: 6340042484639738411, guid: 26dbd60de7bebd2428c843a887f21779, type: 3}
+  langManager: {fileID: 4175196509120718062, guid: 362537321909d92478f6586923037488, type: 3}
 --- !u!4 &1754862502
 Transform:
   m_ObjectHideFlags: 0

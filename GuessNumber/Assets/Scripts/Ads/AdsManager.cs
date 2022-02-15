@@ -12,6 +12,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
         {
             Advertisement.Initialize("4515713", true);
         }
+        if (CheckForInit()) LoadRewardAd();
     }
     public bool CheckForInit()
     {
@@ -30,13 +31,14 @@ public class AdsManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
         Advertisement.Banner.SetPosition(bannerPos);
         Advertisement.Load("Banner_Android", this);
     }
-    private void ShowAd(string id)
+    public void ShowAd(string id)
     {
         Advertisement.Show(id, this);
     }
     public void OnUnityAdsAdLoaded(string placementId)
     {
-        ShowAd(placementId);
+        if (placementId != "Rewarded_Android")
+            ShowAd(placementId);
     }
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
@@ -66,9 +68,11 @@ public class AdsManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
         switch (placementId)
         {
             case "Rewarded_Android":
-                if (showCompletionState == UnityAdsShowCompletionState.COMPLETED)
-                    DataManager.s_inst.Money += 10;
-                ButtonRewardAd.s_inst.UnlockMenu();
+                if (ButtonRewardAd.s_inst != null)
+                {
+                    ButtonRewardAd.s_inst.UnlockMenu();
+                    LoadRewardAd();
+                }
                 break;
             case "Interstitial_Android":
                 break;

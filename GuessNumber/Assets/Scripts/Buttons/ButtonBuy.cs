@@ -11,7 +11,7 @@ public class ButtonBuy : MonoBehaviour
     [SerializeField] private Button buyButton;
     private void Start()
     {
-        text.text = $"Купить за {price}?";
+        text.text = LanguageManager.inst.GetString("buy_for") + price.ToString();
         CheckAvailable();
     }
     private void CheckAvailable()
