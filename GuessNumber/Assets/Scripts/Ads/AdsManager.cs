@@ -10,7 +10,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
         s_inst = this;
         if (Advertisement.isSupported)
         {
-            Advertisement.Initialize("4515713", true);
+            Advertisement.Initialize("4515713");
         }
         if (CheckForInit()) LoadRewardAd();
     }

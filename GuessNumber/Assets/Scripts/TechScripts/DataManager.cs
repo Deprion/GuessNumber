@@ -4,7 +4,7 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     public static DataManager s_inst;
-    public int Money { set; get; } = 0;
+    public int Money = 0;
     private string path;
     [SerializeField] private Sprite[] arrayOfSprite;
     [SerializeField] private Color32[] arrayOfColor;
